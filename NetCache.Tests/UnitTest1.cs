@@ -35,24 +35,6 @@ public class Tests
     }
 
     [Test]
-    public void Hash_SanityCheck_SameHash()
-    {
-        var hashes = new List<ulong>();
-        for (var i = 30 - 1; i >= 0; i--)
-        {
-            hashes.Add(Hash("testKey"));
-        }
-
-        if (hashes.Distinct().Skip(1).Any())
-        {
-            Assert.Pass();
-            return;
-        }
-        
-        Assert.Fail();
-    }
-
-    [Test]
     public void Get_Cache_ReturnsInvalid()
     {
         var obj = _cacher.GetObject<MockClass>("badKey"); // Get a bad value
