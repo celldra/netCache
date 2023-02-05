@@ -1,7 +1,4 @@
-using System;
-using System.IO;
 using System.Text;
-using Extensions.Data;
 using NetCache.Models;
 
 namespace NetCache.Handlers;
@@ -27,12 +24,17 @@ internal class DiskCache
         var location = Path.Combine(_options.PersistantCacheLocation, key.ToString()); // Make path
         CachedObject? obj;
 
+        if (!File.Exists(location)) return null; // Doesn't exist
+
         // ReSharper disable once ConvertToUsingDeclaration
         using (var stream = File.OpenRead(location))
         {
-            var bytes = new Span<byte>(); // New raw file byte span
-            _ = stream.Read(bytes); // Read to a span
-
+            Span<byte> bytes; // New raw file byte span
+            using (var reader = new BinaryReader(stream))
+            {
+                bytes = reader.ReadBytes((int)stream.Length);
+            }
+            
             ReadOnlySpan<char> chars = Encoding.UTF8.GetChars(bytes.ToArray()).AsSpan(); // Get as chars
             obj = _options.Serializer.Deserialize<CachedObject>(chars); // Deserialize
         }

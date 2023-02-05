@@ -21,6 +21,6 @@ namespace NetCache.Interfaces
         /// <param name="rawData">The raw data to deserialize</param>
         /// <typeparam name="TObj">The type of object to deserialize to</typeparam>
         /// <returns>The .NET object</returns>
-        TObj Deserialize<TObj>(ReadOnlySpan<char> rawData);
+        TObj? Deserialize<TObj>(ReadOnlySpan<char> rawData);
     }
 }

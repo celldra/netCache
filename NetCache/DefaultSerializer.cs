@@ -1,22 +1,28 @@
-using System;
+using System.Text;
+using System.Text.Json;
+using IronSnappy;
 using NetCache.Interfaces;
-using Utf8Json;
 
 namespace NetCache
 {
     /// <summary>
-    ///     The default serializer for netCache implements a UTF-8 JSON serializer with minimal memory allocations
+    ///     The default serializer for netCache implements Snappy compressed System.Text.Json
     /// </summary>
     public class DefaultSerializer : ISerializer
     {
         public ReadOnlySpan<char> Serialize<TObj>(TObj obj)
         {
-            return JsonSerializer.ToJsonString(obj).AsSpan();
+            var json = JsonSerializer.SerializeToUtf8Bytes(obj).AsSpan();
+            var compressed = Snappy.Encode(json).AsSpan();
+            return Encoding.UTF8.GetString(compressed).AsSpan();
         }
 
-        public TObj Deserialize<TObj>(ReadOnlySpan<char> rawData)
+        public TObj? Deserialize<TObj>(ReadOnlySpan<char> rawData)
         {
-            return JsonSerializer.Deserialize<TObj>(rawData.ToString());
+            if (rawData.IsEmpty) return default; // Disallow empty input
+            
+            var uncompressed = Snappy.Decode(Encoding.UTF8.GetBytes(rawData.ToString()).AsSpan());
+            return JsonSerializer.Deserialize<TObj>(uncompressed);
         }
     }
 }

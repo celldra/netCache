@@ -12,7 +12,7 @@ internal static class Utils
     /// <returns>The hashed value</returns>
     internal static ulong Hash(string key)
     {
-        var input = Encoding.ASCII.GetBytes(key); 
+        var input = Encoding.UTF8.GetBytes(key); 
         return XXHash.XXH64(input);
     }
 }
