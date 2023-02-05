@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>netCache</PackageId>
+        <Title>netCache</Title>
+        <Authors>celldra</Authors>
+        <Description> netCache is a simple, dependency injection friendly and persistant cache storage library .</Description>
+        <Copyright>Copyright (C) 2023. Celldra</Copyright>
+        <PackageProjectUrl>https://github.com/celldra/netCache</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/celldra/netCache/LICENSE.md</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/celldra/netCache</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Company>netCache</Company>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <LangVersion>11</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IronSnappy" Version="1.3.1" />
+      <PackageReference Include="System.Text.Json" Version="7.0.1" />
+      <PackageReference Include="xxHash.NET" Version="1.0.2" />
+    </ItemGroup>
+
+</Project>
