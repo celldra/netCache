@@ -105,3 +105,8 @@ public class CustomSerializer : ISerializer
 ```
 
 Granted that this one does absolutely nothing, but it can easily provide you enough room to build your own requirements into the serializing system. You could even speed up the performance of the library (in that case, open a pull request!).
+
+## License
+Licensed under the MIT license and currently leveraging these open source packages:
+- [IronSnappy](https://github.com/aloneguid/IronSnappy)
+- [xxHash.NET](https://github.com/wilhelmliao/xxHash.NET)
