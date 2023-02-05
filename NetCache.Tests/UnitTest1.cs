@@ -27,11 +27,11 @@ public class Tests
             LastName = lastName;
         }
     }
-    
-    internal static ulong Hash(string key)
+
+    [SetUp]
+    public void SetUp()
     {
-        var input = Encoding.UTF8.GetBytes(key); 
-        return XXHash.XXH64(input);
+        _cacher.SetObject("testKey", _mock); // Set test entry
     }
 
     [Test]
@@ -60,8 +60,6 @@ public class Tests
     [Test]
     public void GetSet_MemoryCache_ReturnsValid()
     {
-        _cacher.SetObject("testKey", _mock);
-
         var retVal = _cacher.GetObject<MockClass>("testKey");
         
         Assert.Multiple(() =>
