@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>netCache.DependencyInjection</PackageId>
+        <Version>1.0.0.0</Version>
+        <Title>netCache</Title>
+        <Authors>celldra</Authors>
+        <Description>Dependency Injection extension methods for netCache</Description>
+        <Copyright>Copyright (C) 2023. Celldra</Copyright>
+        <PackageProjectUrl>https://github.com/celldra/netCache</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/celldra/netCache/LICENSE.md</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/celldra/netCache</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Product>netCache</Product>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NetCache\NetCache.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>
