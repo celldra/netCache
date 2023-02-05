@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using NetCache.Interfaces;
 
 namespace NetCache.Models

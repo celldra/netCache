@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using System.Text;
 using Extensions.Data;
 using NetCache.Models;
@@ -31,7 +33,7 @@ internal class DiskCache
             var bytes = new Span<byte>(); // New raw file byte span
             _ = stream.Read(bytes); // Read to a span
 
-            var chars = Encoding.UTF8.GetChars(bytes.ToArray()).AsSpan(); // Get as chars
+            ReadOnlySpan<char> chars = Encoding.UTF8.GetChars(bytes.ToArray()).AsSpan(); // Get as chars
             obj = _options.Serializer.Deserialize<CachedObject>(chars); // Deserialize
         }
         
