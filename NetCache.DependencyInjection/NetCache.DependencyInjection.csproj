@@ -11,15 +11,14 @@
         <Description>Dependency Injection extension methods for netCache</Description>
         <Copyright>Copyright (C) 2023. Celldra</Copyright>
         <PackageProjectUrl>https://github.com/celldra/netCache</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/celldra/netCache/LICENSE.md</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/celldra/netCache</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Product>netCache</Product>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <FileVersion>1.0.0.0</FileVersion>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>

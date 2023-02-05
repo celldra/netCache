@@ -10,7 +10,6 @@
         <Description> netCache is a simple, dependency injection friendly and persistant cache storage library .</Description>
         <Copyright>Copyright (C) 2023. Celldra</Copyright>
         <PackageProjectUrl>https://github.com/celldra/netCache</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/celldra/netCache/LICENSE.md</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/celldra/netCache</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -20,7 +19,6 @@
         <NeutralLanguage>en-US</NeutralLanguage>
         <LangVersion>11</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
