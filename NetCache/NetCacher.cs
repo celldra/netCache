@@ -1,4 +1,3 @@
-using System;
 using NetCache.Handlers;
 using NetCache.Interfaces;
 using NetCache.Models;
