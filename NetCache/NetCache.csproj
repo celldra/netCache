@@ -24,7 +24,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="System.Text.Json" Version="7.0.1" />
+      <PackageReference Include="System.Text.Json" Version="7.0.2" />
       <PackageReference Include="xxHash.NET" Version="1.0.2" />
     </ItemGroup>
 
